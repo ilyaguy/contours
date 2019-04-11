@@ -58,15 +58,15 @@ class Convert
                     $colorIndex = 1100;
                 }
                 $color = $this->eleMap[$colorIndex];
-                echo $rp . 'x' . $cp . ' ' . $point . ' ' . $color. PHP_EOL;
                 $draw->setFillColor($color);
-                $draw->point($rp-1, $cp-1);
+                $draw->point($cp-1, $rp-1);
                 // Make pixel.
             }
         }
         $this->canvas = new \Imagick();
         $this->canvas->newImage(33, 33, '#ffffff');
         $this->canvas->drawImage($draw);
+	$this->canvas->scaleImage(256, 256);
         $this->canvas->setImageFormat("png");
         return $this;
     }

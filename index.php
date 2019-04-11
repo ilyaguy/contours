@@ -5,12 +5,13 @@ require_once dirname(__FILE__)."/vendor/autoload.php";
 
 $client = new \GuzzleHttp\Client(['verify' => false]);
 $tileServer = 'https://tile.opengeofiction.net';
-$path = $_SERVER['QUERY_STRING'];
+$path = str_replace('png', 'ddm', $_SERVER['REQUEST_URI']);
 $tileUri = $tileServer . $path;
+header('X-tile: '. $tileUri);
 $res = $client->get($tileUri);
-$body = $res->getBody();
+$data = array_chunk(unpack("f*", $res->getBody()->read(4*33*33)), 33);
 
-require_once "conver.php";
+require_once "convert.php";
 
 $convert = new \OGF\Convert();
-$convert->process($body)->writeImage();
+$convert->process($data)->writeImage();

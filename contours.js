@@ -545,8 +545,8 @@ var CanvasLayer = L.GridLayer.extend({
 //      clearTimeout(wait);
 //      wait = setTimeout(getRelief,500); // only draw after a reasonable delay, so that we don't redraw on every single tile load
 //    }
-      img.src = 'https://elevation-tiles-prod.s3.amazonaws.com/terrarium/'+coords.z+'/'+coords.x+'/'+coords.y+'.png'
-      img.src = 'http://ogf.src2.ilyaguy.me/proxy.php?/planet/OG_elev/'+coords.z+'/'+coords.x+'/'+coords.y+'.ddm';
+	  // img.src = 'https://elevation-tiles-prod.s3.amazonaws.com/terrarium/'+coords.z+'/'+coords.x+'/'+coords.y+'.png'
+      img.src = 'http://ogf.src2.ilyaguy.me/planet/OG_elev/'+coords.z+'/'+coords.x+'/'+coords.y+'.png';
       // img.src = 'https://tile.opengeofiction.net//planet/WW_elev/'+coords.z+'/'+coords.x+'/'+coords.y+'.png'
       // img.src = 'https://tile.opengeofiction.net/topomap/'+coords.z+'/'+coords.x+'/'+coords.y+'.png'
       return tile;

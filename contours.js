@@ -668,6 +668,7 @@ function drawContours(svg) {
       contourContext.shadowOffsetX = shadowSize;
       contourContext.shadowOffsetY = shadowSize;
 
+		getContours();
       contoursGeoData.forEach(function (c) {
         contourContext.beginPath();
         if (c.value >= 0 || bathyColorType == 'none') { // for values above sea level (or if we aren't styling bahymetry)

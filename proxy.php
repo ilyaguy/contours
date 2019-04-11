@@ -9,9 +9,8 @@ $path = $_SERVER['QUERY_STRING'];
 $tileUri = $tileServer . $path;
 $res = $client->get($tileUri);
 $body = $res->getBody();
-header('Content-type: application/octet-stream');
-echo $body;
 
+require_once "conver.php";
 
-
-
+$convert = new \OGF\Convert();
+$convert->process($body)->writeImage();

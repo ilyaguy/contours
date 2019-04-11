@@ -2,33 +2,24 @@
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <title>Contour Viewer</title>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54392712-6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <link type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700" rel="stylesheet">
+  <link type="text/css" href="https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css" rel="stylesheet" />
+  <link type="text/css" rel="stylesheet" href="css/fontello.css" />
+  <script type="application/javascript" src="https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js"></script>
+  <script type="application/javascript" src="lib/leaflet-hash.js"></script>
+  <script type="application/javascript" src="https://d3js.org/d3-selection.v1.min.js"></script>
+  <script type="application/javascript" src="https://d3js.org/d3-contour.v1.min.js"></script>
+  <script type="application/javascript" src="https://d3js.org/d3-geo.v1.min.js"></script>
+  <script type="application/javascript" src="https://d3js.org/d3-array.v1.min.js"></script>
+  <script type="application/javascript" src="https://d3js.org/d3-collection.v1.min.js"></script>
+  <script type="application/javascript" src="https://d3js.org/d3-color.v1.min.js"></script>
+  <script type="application/javascript" src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+  <script type="application/javascript" src="https://d3js.org/d3-scale.v2.min.js"></script>
+  <script type="application/javascript" src="https://d3js.org/d3-request.v1.min.js"></script>
+  <script type="application/javascript" src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+  <script type="application/javascript" src="jscolor.js"></script>
 
-    gtag('config', 'UA-54392712-6');
-  </script>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700" rel="stylesheet">
-  <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
-  <link rel="stylesheet" href="css/fontello.css" />
-  <meta charset="utf-8">
-  <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
-  <script src="lib/leaflet-hash.js"></script>
-  <script src="https://d3js.org/d3-selection.v1.min.js"></script>
-  <script src="https://d3js.org/d3-contour.v1.min.js"></script>
-  <script src="https://d3js.org/d3-geo.v1.min.js"></script>
-  <script src="https://d3js.org/d3-array.v1.min.js"></script>
-  <script src="https://d3js.org/d3-collection.v1.min.js"></script>
-  <script src="https://d3js.org/d3-color.v1.min.js"></script>
-  <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-  <script src="https://d3js.org/d3-scale.v2.min.js"></script>
-  <script src="https://d3js.org/d3-request.v1.min.js"></script>
-  <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
-  <script src="jscolor.js"></script>
-
-  <style>
+  <style type="text/css">
     html, body { 
       margin: 0;
       font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
@@ -330,10 +321,10 @@
     <div id="panels">
       
       <div id="download">
-        <i class="icon-left-open"></i>
+        <span class="icon-left-open"/>
         <div class="settings-content note"><br><em>Roads and labels are provided only for helping find your area of interest on this map. They will not be inlcuded in downloads.</em><br><br></div>
         <div class='settings-row geojson'>
-          <p class="settings-title"><i class="icon-download"></i> GeoJSON</p>
+          <p class="settings-title"><span class="icon-download"/>GeoJSON</p>
           <div class="settings-content">Download contours for use in GIS or mapping applications. Contours will be exported as overlapping <code>MultiPolygon</code> features, each with an <code>elevation</code> property.<br><em>Geodata only. Styles will not be included!</em>
             <button class="download-button" id="download-geojson">
               <i class="icon-download"></i> Download GeoJSON
@@ -458,7 +449,7 @@
     -->
   </div>
   <div id="loading">Drawing contours...</div>
-  <script src="/util/OGFUtil.js"></script>
-  <script src='contours.js'></script>
+  <script type="application/javascript" src="/util/OGFUtil.js"></script>
+  <script type="application/javascript" src="contours.js"></script>
 </body>
 </html>
